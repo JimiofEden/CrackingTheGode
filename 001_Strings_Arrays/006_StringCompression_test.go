@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestCheck(t *testing.T) {
+func TestCheckStringCompression(t *testing.T) {
 	tests := []struct {
 		s string
 		out string

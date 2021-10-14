@@ -1,12 +1,11 @@
 package ch01
 
 import (
-	"fmt"
 	"testing"
 	"reflect"
 )
 
-func TestCheck(t *testing.T) {
+func TestCheckRotateMatrix(t *testing.T) {
 	tests := []struct {
 		s [][]int
 		out [][]int
@@ -18,7 +17,6 @@ func TestCheck(t *testing.T) {
 
 	for _, test := range tests {
 		res := rotateMatrix(test.s)
-		fmt.Println(res)
 		if !reflect.DeepEqual(res, test.out) {
 			t.Errorf("Test Failed: \n%#v\n Actual result: \n%v\n", test, res)
 		}

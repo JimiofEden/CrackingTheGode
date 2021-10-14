@@ -30,7 +30,7 @@ func TestIsUniqueNoMap(t *testing.T) {
 		out   bool
 	}{
 		{"", true},
-		{"unique", true},
+		{"unique", false},
 		{"uniquee", false},
 		{"abcdefghijklmnopqrstuvwxyz", true},
 		{"abcdefghijklmnopqrstuvwxyza", false},

@@ -1,7 +1,6 @@
 package ch01
 
 import (
-	"fmt"
 	"strings"
 	"sort"
 )
@@ -14,7 +13,6 @@ func palindromePermutationNLogN(inputString string) bool {
 		return false
 	}
 	inputString = SortString(strings.ToLower(inputString))
-	fmt.Println(inputString)
 
 	storedLetter := inputString[0]
 	counter := 1

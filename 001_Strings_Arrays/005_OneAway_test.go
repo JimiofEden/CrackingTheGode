@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestCheck(t *testing.T) {
+func TestCheckOneAway(t *testing.T) {
 	tests := []struct {
 		s1 string
 		s2 string

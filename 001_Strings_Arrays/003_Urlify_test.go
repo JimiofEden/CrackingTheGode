@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestCheckPermutations(t *testing.T) {
+func TestCheckUrlify(t *testing.T) {
 	tests := []struct {
 		s1 string
 		i1 int
