@@ -85,7 +85,14 @@ func TestCheckKthToLast(t *testing.T) {
 	})
 
 	for i, test := range tests {
-		res := kthToLast(test.l, test.k)
+		res := kthToLastWithLen(test.l, test.k)
+		if !reflect.DeepEqual(test.out.value, res.value) {
+			t.Errorf("Test %v Failed Expected: \n%#v\n Actual result: \n%v\n", i+1, test.out.value, res.value)
+		}
+	}
+
+	for i, test := range tests {
+		res := kthToLastWithoutLen(test.l, test.k)
 		if !reflect.DeepEqual(test.out.value, res.value) {
 			t.Errorf("Test %v Failed Expected: \n%#v\n Actual result: \n%v\n", i+1, test.out.value, res.value)
 		}
