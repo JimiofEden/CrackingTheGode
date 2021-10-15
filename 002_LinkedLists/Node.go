@@ -12,11 +12,10 @@ func NewNode(n int) *Node {
 }
 
 func (l *Node) AddTail(v int) {
-	newItem := NewNode(v)
 	for l.next != nil {
 		l = l.next
 	}
-	l.next = newItem
+	l.next = NewNode(v)
 }
 
 func (l *Node) Len() int {
