@@ -29,29 +29,20 @@ func (n *TreeNode) AddRightLeaf(v int) {
 	}
 }
 
-func (n *TreeNode) IsBinarySearchTree() bool {
-	if n == nil {
-		return false
-	}
-
-	const MaxUint = ^uint(0) 
-	const MinUint = 0 
-	const MaxInt = int(MaxUint >> 1) 
-	const MinInt = -MaxInt - 1
-	
-	return isBinarySearchTreeHelper(n, MinInt, MaxInt)
-}
-func isBinarySearchTreeHelper(n *TreeNode, min int, max int) bool {
-	if n == nil {
-		return true
-	}
-	if n.Val < min || n.Val > max {
-		return false
-	}
-
-	return isBinarySearchTreeHelper(n.Left, min, n.Val-1) && isBinarySearchTreeHelper(n.Right, n.Val+1, max)
-}
-
 func (n *TreeNode) IsLeaf() bool {
 	return n.Left == nil && n.Right == nil
+}
+
+func IsSameTree(p *TreeNode, q *TreeNode) bool {
+    
+    for p != nil && q != nil {
+        if p.Val != q.Val {
+            return false
+        }
+        return IsSameTree(p.Left, q.Left) && IsSameTree(p.Right, q.Right)
+    }
+    if p != nil || q != nil {
+        return false
+    }
+    return true
 }
